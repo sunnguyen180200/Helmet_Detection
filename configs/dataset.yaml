@@ -1,0 +1,9 @@
+# YOLOv11 dataset configuration
+path: ./data  # dataset root
+train: ${path}/processed/train  # train images
+val: ${path}/processed/val  # validation images
+test: ${path}/processed/test  # test images
+
+# Classes
+nc: 2  # number of classes
+names: ['helmet', 'no_helmet']  # class names 

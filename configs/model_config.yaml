@@ -1,0 +1,52 @@
+# YOLOv11 Motorcycle Helmet Detection Configuration
+
+# Dataset
+# data: D:/2025/yolo/main_src/data/dataset.yaml
+data: D:/2025/yolo/main_src/data/yolov11_batch/dataset.yaml
+
+# Model
+model: ../models/pretrain_model/yolo11n.pt  # Base model to start from when available, currently will use latest available in Ultralytics
+
+# Training parameters
+epochs: 100
+patience: 50
+batch_size: 2
+imgsz: 640
+device: 1  # cuda device (0, 1, 2, etc. or 'cpu')
+
+# Augmentation
+augment: True
+mixup: 0.1
+mosaic: 0.5
+degrees: 10.0
+translate: 0.1
+scale: 0.5
+shear: 2.0
+perspective: 0.0
+flipud: 0.0
+fliplr: 0.5
+hsv_h: 0.015
+hsv_s: 0.7
+hsv_v: 0.4
+
+# Hyperparameters
+lr0: 0.01  # Initial learning rate
+lrf: 0.01  # Final learning rate fraction
+momentum: 0.937
+weight_decay: 0.0005
+warmup_epochs: 3.0
+warmup_momentum: 0.8
+warmup_bias_lr: 0.1
+
+# Save options
+save: True
+save_period: 10
+project: helmet_detection  # Save results to project/name
+name: yolov11  # Save results to project/name
+
+# Performance optimization
+nbs: 64  # Nominal batch size
+overlap_mask: True
+mask_ratio: 4
+dropout: 0.0
+val: True  # Validate during training 
